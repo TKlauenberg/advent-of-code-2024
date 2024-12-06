@@ -7,7 +7,7 @@ open type System.Environment
 type String with
 
     member this.ByNewLine() =
-        this.Split([| NewLine; "\n" |], StringSplitOptions.RemoveEmptyEntries)
+        this.Split([| NewLine |],StringSplitOptions.TrimEntries)
 
     /// This reusable function takes a multiline string and groups up based on whenever an empty line occurs.
     member this.GroupByEmptyLine() =
