@@ -15,7 +15,7 @@ let sample1 =
 3   9
 3   3"""
 
-let compute (data: string array)  =
+let compute (data: string array) =
     data
     |> Seq.map readData
     |> Seq.toList
@@ -29,7 +29,8 @@ let sample1Result = sample1.ByNewLine() |> compute
 let part1 = Files[1] |> compute
 
 // part two
-let sample2 = """3   4
+let sample2 =
+    """3   4
 4   3
 2   5
 1   3
@@ -41,15 +42,11 @@ let compute2 data =
     |> Seq.map readData
     |> Seq.toList
     |> List.unzip
-    |> fun (a,b) ->
+    |> fun (a, b) ->
         a
         |> List.map (fun x ->
-            let count =
-                b
-                |> List.filter (fun y -> y=x)
-                |> List.length
-            x*count
-        )
+            let count = b |> List.filter (fun y -> y = x) |> List.length
+            x * count)
     |> List.sum
 
 let sample2Result = sample2.ByNewLine() |> compute2

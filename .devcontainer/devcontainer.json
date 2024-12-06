@@ -9,7 +9,7 @@
     "features": {
         // https://github.com/devcontainers/features/blob/main/src/dotnet/README.md
         "ghcr.io/devcontainers/features/dotnet:2": {
-            "version": "9.0"
+            "version": "9.0.101"
         },
         "ghcr.io/devcontainers/features/git:1": {}
     },
