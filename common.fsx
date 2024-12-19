@@ -34,6 +34,13 @@ module List =
 
         loop ([], [])
 
+module Map =
+    let removeAmount amount key map=
+        match Map.tryFind key map with
+        | Some x when x > 0-> Map.add key (x-amount) map
+        | Some _ -> Map.remove key map
+        | None -> map
+
 let (|Split|) (on: char) (s: string) =
     s.Split(on, StringSplitOptions.RemoveEmptyEntries ||| StringSplitOptions.TrimEntries)
     |> Array.toList
